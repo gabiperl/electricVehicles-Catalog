@@ -1,1 +1,6 @@
-<p>manufacturers-list works!</p>
+<div class="row row-cols-5">
+    @for (m of getManufacturers(); track $index)
+    {
+        <app-manufacturer-card [manufacturer]="m"/>
+    }
+</div>
