@@ -3,6 +3,15 @@
     <div class="card-body">
       <h5 class="card-title">{{vehicle.name}}</h5>
       <p class="card-text">{{vehicle.price}} €</p>
-      <a href="#" class="btn btn-primary">Add to garage</a>
+
+      @if (!isAlreadyInMyGarage(vehicle)) 
+      {
+        <button (click)="addVehicleToGarage(vehicle)" class="btn btn-primary">Add to garage</button>
+      }
+      
+      @else
+      {
+        <button (click)="removeVehicleFromGarage(vehicle)" class="btn btn-danger">Remove from garage</button>
+      }
     </div>
   </div>
